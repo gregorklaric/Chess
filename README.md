@@ -49,10 +49,6 @@ node perft.test.js
 
 Requires Node.js; nothing to install.
 
-## Publishing on GitHub Pages
-
-Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`. The game is then served at `https://gregorklaric.github.io/Chess/` (`index.html` forwards to `chess.html`).
-
 ## License
 
 MIT, see [LICENSE](LICENSE).
