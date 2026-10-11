@@ -1804,11 +1804,17 @@ function renderMoves() {
       ? '<button type="button" class="mv' + (cur === i + 2 ? ' cur' : '') + '" data-ply="' + (i + 2) + '">' + game.sans[i + 1] + '</button>'
       : '<span></span>';
   }
+  var keep = el.scrollTop;                    // rebuilding the list must not move the scroll position
   el.innerHTML = html;
+  el.scrollTop = keep;
   $('live-btn').classList.toggle('hidden', viewPly === null);
   var c = el.querySelector('.mv.cur');
   if (viewPly === null) el.scrollTop = el.scrollHeight;
-  else if (c) { var top = c.offsetTop, bot = top + c.offsetHeight; if (top < el.scrollTop || bot > el.scrollTop + el.clientHeight) el.scrollTop = top - el.clientHeight / 2; }
+  else if (c) {
+    // measure against the list itself (offsetTop is relative to a different element in the stacked phone layout)
+    var lr = el.getBoundingClientRect(), cr = c.getBoundingClientRect();
+    if (cr.top < lr.top || cr.bottom > lr.bottom) el.scrollTop += (cr.top - lr.top) - (el.clientHeight - cr.height) / 2;
+  }
 }
 var REASONS = {
   checkmate: 'Checkmate', stalemate: 'Stalemate', repetition: 'Threefold repetition',

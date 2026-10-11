@@ -4,7 +4,7 @@ A chess game against the computer in a single HTML file. No build step, no serve
 
 ![Screenshot](docs/screenshot.png)
 
-**Play online:** https://YOUR-USERNAME.github.io/YOUR-REPO/ *(after enabling GitHub Pages, see below)*
+**Play online:** https://gregorklaric.github.io/Chess/
 
 ## Features
 
@@ -51,7 +51,7 @@ Requires Node.js; nothing to install.
 
 ## Publishing on GitHub Pages
 
-Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`. The game is then served at `https://YOUR-USERNAME.github.io/YOUR-REPO/` (`index.html` forwards to `chess.html`).
+Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`. The game is then served at `https://gregorklaric.github.io/Chess/` (`index.html` forwards to `chess.html`).
 
 ## License
 
